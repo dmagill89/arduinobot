@@ -68,6 +68,17 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -89,17 +100,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -166,6 +166,21 @@ preinstall/fast:
 depend:
 	cd /home/david/Projects/arduinobot_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+arduinobot_test/CMakeFiles/simple_cpp_timer.dir/rule:
+	cd /home/david/Projects/arduinobot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 arduinobot_test/CMakeFiles/simple_cpp_timer.dir/rule
+.PHONY : arduinobot_test/CMakeFiles/simple_cpp_timer.dir/rule
+
+# Convenience name for target.
+simple_cpp_timer: arduinobot_test/CMakeFiles/simple_cpp_timer.dir/rule
+
+.PHONY : simple_cpp_timer
+
+# fast build rule for target.
+simple_cpp_timer/fast:
+	cd /home/david/Projects/arduinobot_ws/build && $(MAKE) -f arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build.make arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build
+.PHONY : simple_cpp_timer/fast
 
 # Convenience name for target.
 arduinobot_test/CMakeFiles/simple_cpp_subscriber.dir/rule:
@@ -476,6 +491,33 @@ src/simple_subscriber.cpp.s:
 	cd /home/david/Projects/arduinobot_ws/build && $(MAKE) -f arduinobot_test/CMakeFiles/simple_cpp_subscriber.dir/build.make arduinobot_test/CMakeFiles/simple_cpp_subscriber.dir/src/simple_subscriber.cpp.s
 .PHONY : src/simple_subscriber.cpp.s
 
+src/simple_timer.o: src/simple_timer.cpp.o
+
+.PHONY : src/simple_timer.o
+
+# target to build an object file
+src/simple_timer.cpp.o:
+	cd /home/david/Projects/arduinobot_ws/build && $(MAKE) -f arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build.make arduinobot_test/CMakeFiles/simple_cpp_timer.dir/src/simple_timer.cpp.o
+.PHONY : src/simple_timer.cpp.o
+
+src/simple_timer.i: src/simple_timer.cpp.i
+
+.PHONY : src/simple_timer.i
+
+# target to preprocess a source file
+src/simple_timer.cpp.i:
+	cd /home/david/Projects/arduinobot_ws/build && $(MAKE) -f arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build.make arduinobot_test/CMakeFiles/simple_cpp_timer.dir/src/simple_timer.cpp.i
+.PHONY : src/simple_timer.cpp.i
+
+src/simple_timer.s: src/simple_timer.cpp.s
+
+.PHONY : src/simple_timer.s
+
+# target to generate assembly for a file
+src/simple_timer.cpp.s:
+	cd /home/david/Projects/arduinobot_ws/build && $(MAKE) -f arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build.make arduinobot_test/CMakeFiles/simple_cpp_timer.dir/src/simple_timer.cpp.s
+.PHONY : src/simple_timer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -483,9 +525,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/local"
+	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... simple_cpp_timer"
 	@echo "... simple_cpp_subscriber"
 	@echo "... simple_cpp_publisher"
 	@echo "... std_msgs_generate_messages_py"
@@ -512,6 +555,9 @@ help:
 	@echo "... src/simple_subscriber.o"
 	@echo "... src/simple_subscriber.i"
 	@echo "... src/simple_subscriber.s"
+	@echo "... src/simple_timer.o"
+	@echo "... src/simple_timer.i"
+	@echo "... src/simple_timer.s"
 .PHONY : help
 
 

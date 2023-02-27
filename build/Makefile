@@ -298,6 +298,19 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named simple_cpp_timer
+
+# Build rule for target.
+simple_cpp_timer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple_cpp_timer
+.PHONY : simple_cpp_timer
+
+# fast build rule for target.
+simple_cpp_timer/fast:
+	$(MAKE) -f arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build.make arduinobot_test/CMakeFiles/simple_cpp_timer.dir/build
+.PHONY : simple_cpp_timer/fast
+
+#=============================================================================
 # Target rules for targets named simple_cpp_subscriber
 
 # Build rule for target.
@@ -541,6 +554,7 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... simple_cpp_timer"
 	@echo "... simple_cpp_subscriber"
 	@echo "... simple_cpp_publisher"
 	@echo "... std_msgs_generate_messages_py"

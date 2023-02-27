@@ -19,9 +19,13 @@ target_link_libraries(simple_cpp_publisher ${catkin_LIBRARIES})
 add_executable(simple_cpp_subscriber src/simple_subscriber.cpp)
 target_link_libraries(simple_cpp_subscriber ${catkin_LIBRARIES})
 
-# catkin_install_python(
-#   PROGRAMS 
-#   scripts/simple_publisher.py 
-#   scripts/simple_subscriber.py
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+add_executable(simple_cpp_timer src/simple_timer.cpp)
+target_link_libraries(simple_cpp_timer ${catkin_LIBRARIES})
+
+catkin_install_python(
+    PROGRAMS 
+    scripts/simple_publisher.py 
+    scripts/simple_subscriber.py
+    scripts/simple_timer.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

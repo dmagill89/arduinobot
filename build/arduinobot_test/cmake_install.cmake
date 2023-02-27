@@ -52,3 +52,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arduinobot_test" TYPE FILE FILES "/home/david/Projects/arduinobot_ws/src/arduinobot_test/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/arduinobot_test" TYPE PROGRAM FILES "/home/david/Projects/arduinobot_ws/build/arduinobot_test/catkin_generated/installspace/simple_publisher.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/arduinobot_test" TYPE PROGRAM FILES "/home/david/Projects/arduinobot_ws/build/arduinobot_test/catkin_generated/installspace/simple_subscriber.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/arduinobot_test" TYPE PROGRAM FILES "/home/david/Projects/arduinobot_ws/build/arduinobot_test/catkin_generated/installspace/simple_timer.py")
+endif()
+
