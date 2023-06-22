@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     # Keep going publishing messages until the ROS communication is alive
     while not rospy.is_shutdown():
-        hello_msg = "hello world %d" % counter
+        hello_msg = f"hello world {counter}"
         pub.publish(hello_msg)
         # wait the desired rate before publishing the next message
         rate.sleep()

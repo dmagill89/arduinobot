@@ -1,0 +1,13 @@
+Python startup
+1. catkin_make
+2. roscore
+3. source devel/setup.bash
+4. rosrun aruduinobot_test <node>.py e.g. simple_publisher.py
+5. rostopic <command> <node> e.g. rostopic echo chatter
+
+C++
+1. catkin_make
+2. roscore
+3. source devel/setup.bash
+4. rosrun arduinobot_test <node> e.g. simple_cpp_publisher
+5. rostopic <command> <node> e.g. rostopic echo chatter

@@ -17,8 +17,7 @@ int main(int argc, char **argv)
 
     int counter = 0;
     // Keep going publishing messages until the ROS communication is alive
-    while(ros::ok()) 
-    {
+    while(ros::ok()) {
         std_msgs::String msg;
 
         std::stringstream ss;
