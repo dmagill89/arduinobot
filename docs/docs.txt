@@ -13,5 +13,19 @@ C++
 5. rostopic <command> <node> e.g. rostopic echo chatter
 
 RViz
-1. source devel/setup.bash
-2. roslaunch arduinobot_description display.launch
+1. roscore
+2. source devel/setup.bash
+3. roslaunch arduinobot_description display.launch
+
+ROS Parameter Server 
+1. roscore 
+2. rosparam list (list paramets avaiable)
+3. rosparam get <param> e.g. ros get rosdistro
+4. rosparam set <param_name> <value> e.g. rosparam set firstname "David"
+
+xacrco 
+1. rosrun xacrco xacrco arduinobot_ws/src/arduinobot_description/urdf/arduinobot.urdf.xacro > arduinobot.urdf 
+2. rosparam load arduinotbot.urdf robot_description
+
+Gazebo
+1. roslaunch arduinobot_description gazebo.launch
