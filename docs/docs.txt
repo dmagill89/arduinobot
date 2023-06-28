@@ -29,3 +29,7 @@ xacrco
 
 Gazebo
 1. roslaunch arduinobot_description gazebo.launch
+
+Load configuration file to parameter Server
+1. roscore
+2. rosparam load <parame_name> e.g. rosparam load simple_configuration.yaml

@@ -3,6 +3,6 @@ prefix=/home/david/Projects/arduinobot_ws/devel
 Name: arduinobot_test
 Description: Description of arduinobot_test
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/david/Projects/arduinobot_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: 

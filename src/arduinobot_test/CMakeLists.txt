@@ -5,6 +5,17 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
+)
+
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
 )
 
 catkin_package()
@@ -27,5 +38,6 @@ catkin_install_python(
     scripts/simple_publisher.py 
     scripts/simple_subscriber.py
     scripts/simple_timer.py
+    scripts/simple_service.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
