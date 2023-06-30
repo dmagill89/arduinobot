@@ -33,3 +33,9 @@ Gazebo
 Load configuration file to parameter Server
 1. roscore
 2. rosparam load <parame_name> e.g. rosparam load simple_configuration.yaml
+
+ROS Service
+1. rosecore
+2. source devel/setup.bash
+3. rosservice list (list paramets avaiable)
+4. rosservice call <service_name> "<params>" e.g. rosservice call /add_two_ints "a: 5 b: 7" 
