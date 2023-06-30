@@ -36,11 +36,15 @@ target_link_libraries(simple_cpp_timer ${catkin_LIBRARIES})
 add_executable(simple_cpp_service src/simple_service.cpp)
 target_link_libraries(simple_cpp_service ${catkin_LIBRARIES})
 
+add_executable(simple_cpp_service_client src/simple_service_client.cpp)
+target_link_libraries(simple_cpp_service_client ${catkin_LIBRARIES})
+
 catkin_install_python(
     PROGRAMS 
     scripts/simple_publisher.py 
     scripts/simple_subscriber.py
     scripts/simple_timer.py
     scripts/simple_service.py
+    scripts/simple_service_client.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
