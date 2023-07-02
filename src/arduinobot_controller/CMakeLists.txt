@@ -15,7 +15,7 @@ add_service_files(
 
 generate_messages(
   DEPENDENCIES
-  std_msgs
+  std_msgs 
 )
 
 catkin_package(
@@ -25,6 +25,10 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
+
+add_executable(angles_converter_cpp src/angles_converter.cpp)
+add_dependencies(angles_converter_cpp ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(angles_converter_cpp ${catkin_LIBRARIES})
 
 catkin_install_python(PROGRAMS 
     scripts/angles_converter.py

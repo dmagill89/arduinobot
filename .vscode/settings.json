@@ -3,7 +3,8 @@
         "/opt/ros/noetic/lib/python3/dist-packages"
     ],
     "files.associations": {
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "*.srv": "cpp"
     },
     "python.analysis.extraPaths": [
         "/opt/ros/noetic/lib/python3/dist-packages"
