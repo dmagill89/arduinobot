@@ -1,0 +1,8 @@
+prefix=/home/david/Projects/arduinobot_ws/devel
+
+Name: arduinobot_controller
+Description: Description of arduinobot_controller
+Version: 0.0.0
+Cflags: -I/home/david/Projects/arduinobot_ws/devel/include -I/home/david/Projects/arduinobot_ws/src/arduinobot_controller/include
+Libs: -L${prefix}/lib 
+Requires: 
