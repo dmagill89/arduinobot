@@ -46,6 +46,9 @@ target_link_libraries(simple_cpp_service ${catkin_LIBRARIES})
 add_executable(simple_cpp_service_client src/simple_service_client.cpp)
 target_link_libraries(simple_cpp_service_client ${catkin_LIBRARIES})
 
+add_executable(simple_cpp_action_server src/simple_action_server.cpp)
+target_link_libraries(simple_cpp_action_server ${catkin_LIBRARIES})
+
 catkin_install_python(
     PROGRAMS 
     scripts/simple_publisher.py 
