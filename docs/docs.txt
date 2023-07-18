@@ -39,3 +39,11 @@ ROS Service
 2. source devel/setup.bash
 3. rosservice list (list paramets avaiable)
 4. rosservice call <service_name> "<params>" e.g. rosservice call /add_two_ints "a: 5 b: 7" 
+
+MoveIT
+1. open four terminals and source devel/setup.bash in each
+2. In terminal 1: roslaunch arduinobot_description gazebo.launch
+3. In terminal 2: roslaunch arduinobot_controller controller.launch is_sim:=true
+4. In terminal 3: roslaunch arduinobot_moveit move_group.launch
+5. In terminal 4: roslaunch arduinobot_moveit moveit_rviz.launch
+6. In rviv open configuration from arduinotbot_ws/src/arduinobot_moveit/moveit.rviz
