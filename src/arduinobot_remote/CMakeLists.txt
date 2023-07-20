@@ -28,6 +28,10 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(task_server src/task_server.cpp)
+add_dependencies(task_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(task_server ${catkin_LIBRARIES})
+
 catkin_install_python(PROGRAMS 
     scripts/task_server.py 
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

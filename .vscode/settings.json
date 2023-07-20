@@ -4,7 +4,8 @@
     ],
     "files.associations": {
         "sstream": "cpp",
-        "*.srv": "cpp"
+        "*.srv": "cpp",
+        "vector": "cpp"
     },
     "python.analysis.extraPaths": [
         "/opt/ros/noetic/lib/python3/dist-packages"
