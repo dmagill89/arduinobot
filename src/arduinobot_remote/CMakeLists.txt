@@ -34,5 +34,6 @@ target_link_libraries(task_server ${catkin_LIBRARIES})
 
 catkin_install_python(PROGRAMS 
     scripts/task_server.py 
+    scripts/alexa_interface.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
