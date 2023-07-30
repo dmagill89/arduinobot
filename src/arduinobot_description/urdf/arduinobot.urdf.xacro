@@ -146,7 +146,23 @@
         </collision>
     </link>
 
-    <link name="tool_link"></link>
+    <link name="tool_link">
+        <link name="tool_link">
+            <xacro:default_inertial mass="0.01"/>
+            <visual>
+                <origin rpy="0 0 -${PI/2}" xyz="-0.04 0.50 -0.1"/>
+                <geometry>
+                    <cylinder radius="0.03" length="1.0"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin rpy="0 0 -${PI/2}" xyz="-0.04 0.50 -0.1"/>
+                <geometry>
+                    <cylinder radius="0.03" length="1.0"/>
+                </geometry>
+            </collision>
+        </link>
+    </link>
 
     <!-- Joints -->  
     <joint name="virtual_joint" type="fixed">
