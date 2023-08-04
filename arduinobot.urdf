@@ -266,7 +266,7 @@
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <legacyMode>true</legacyMode>
     </plugin>
-    <plugin filename="libroboticsgroup_gazebo_mimic_joint_plugin.so" name="joint_5_mimic_joint_4">
+    <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="joint_5_mimic_joint_4">
       <joint>joint_4</joint>
       <mimicJoint>joint_5</mimicJoint>
       <multiplier>-1.0</multiplier>
