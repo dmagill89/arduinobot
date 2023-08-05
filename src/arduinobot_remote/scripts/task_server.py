@@ -8,8 +8,8 @@ import moveit_commander
 
 class TaskServer(object):
     result = ArduinobotTaskResult()
-    arm_goal = []
-    gripper_goal = []
+    arm_goal = [0.0, 0.0, 0.0]
+    gripper_goal = [0.0, 0.0]
 
     def __init__(self, name):
         self.action_name_ = name
@@ -31,6 +31,20 @@ class TaskServer(object):
         elif goal.task_number == 2:
             self.arm_goal = [-1.57, 0.0, -1.0]
             self.gripper_goal = [0.0, 0.0]
+        elif goal.task_number == 3:
+            self.arm_goal[0] += 0.5
+        elif goal.task_number == 4:
+            self.arm_goal[0] -= 0.5
+        elif goal.task_number == 5:
+            self.arm_goal[1] -= 0.6
+            self.arm_goal[2] -= 0.03
+        elif goal.task_number == 6:
+            self.arm_goal[1] += 0.6
+            self.arm_goal[2] += 0.07
+        elif goal.task_number == 7:
+            self.gripper_goal = [0.0, 0.0]
+        elif goal.task_number == 8:
+            self.gripper_goal = [-0.7, -0.7]
         else:
             rospy.logerr("Invalid goal")
             return

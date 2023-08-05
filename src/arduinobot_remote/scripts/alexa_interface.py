@@ -99,13 +99,13 @@ class RightIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Hi, I am ready."
+        speech_text = "Okay, I'm moving right"
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Wake", speech_text)).set_should_end_session(
+            SimpleCard("Right", speech_text)).set_should_end_session(
             True)
         
-        goal = ArduinobotTaskGoal(task_number=0)
+        goal = ArduinobotTaskGoal(task_number=3)
         client.send_goal(goal)
         return handler_input.response_builder.response
     
@@ -117,13 +117,13 @@ class LeftIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Hi, I am ready."
+        speech_text = "Okay, I'm moving left"
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Wake", speech_text)).set_should_end_session(
+            SimpleCard("Left", speech_text)).set_should_end_session(
             True)
         
-        goal = ArduinobotTaskGoal(task_number=0)
+        goal = ArduinobotTaskGoal(task_number=4)
         client.send_goal(goal)
         return handler_input.response_builder.response
     
@@ -135,15 +135,16 @@ class DownIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Hi, I am ready."
+        speech_text = "Okay, I'm moving down."
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Wake", speech_text)).set_should_end_session(
+            SimpleCard("Down", speech_text)).set_should_end_session(
             True)
         
-        goal = ArduinobotTaskGoal(task_number=0)
+        goal = ArduinobotTaskGoal(task_number=5)
         client.send_goal(goal)
         return handler_input.response_builder.response
+
 
 class UpIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
@@ -152,15 +153,51 @@ class UpIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Hi, I am ready."
+        speech_text = "Okay, I'm moving up."
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Wake", speech_text)).set_should_end_session(
+            SimpleCard("Up", speech_text)).set_should_end_session(
             True)
         
-        goal = ArduinobotTaskGoal(task_number=0)
+        goal = ArduinobotTaskGoal(task_number=6)
         client.send_goal(goal)
         return handler_input.response_builder.response
+    
+class CloseIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("CloseIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speech_text = "Okay, I'm closing the gripper"
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("Up", speech_text)).set_should_end_session(
+            True)
+        
+        goal = ArduinobotTaskGoal(task_number=7)
+        client.send_goal(goal)
+        return handler_input.response_builder.response
+    
+    
+class OpenIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("OpenIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speech_text = "Okay, I'm opening the gripper"
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("Up", speech_text)).set_should_end_session(
+            True)
+        
+        goal = ArduinobotTaskGoal(task_number=8)
+        client.send_goal(goal)
+        return handler_input.response_builder.response
+
 
 class AllExceptionHandler(AbstractExceptionHandler):
 
