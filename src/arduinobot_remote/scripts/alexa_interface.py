@@ -92,6 +92,75 @@ class WakeIntentHandler(AbstractRequestHandler):
         client.send_goal(goal)
         return handler_input.response_builder.response    
 
+class RightIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("RightIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speech_text = "Hi, I am ready."
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("Wake", speech_text)).set_should_end_session(
+            True)
+        
+        goal = ArduinobotTaskGoal(task_number=0)
+        client.send_goal(goal)
+        return handler_input.response_builder.response
+    
+
+class LeftIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("LeftIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speech_text = "Hi, I am ready."
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("Wake", speech_text)).set_should_end_session(
+            True)
+        
+        goal = ArduinobotTaskGoal(task_number=0)
+        client.send_goal(goal)
+        return handler_input.response_builder.response
+    
+
+class DownIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("DownIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speech_text = "Hi, I am ready."
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("Wake", speech_text)).set_should_end_session(
+            True)
+        
+        goal = ArduinobotTaskGoal(task_number=0)
+        client.send_goal(goal)
+        return handler_input.response_builder.response
+
+class UpIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return is_intent_name("UpIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speech_text = "Hi, I am ready."
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("Wake", speech_text)).set_should_end_session(
+            True)
+        
+        goal = ArduinobotTaskGoal(task_number=0)
+        client.send_goal(goal)
+        return handler_input.response_builder.response
 
 class AllExceptionHandler(AbstractExceptionHandler):
 
