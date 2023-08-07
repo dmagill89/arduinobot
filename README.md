@@ -21,6 +21,10 @@ A robotic arm using Robot Operating System based off of [EEZYbotARM](https://www
 
 ## Demo
 
+
+https://github.com/dmagill89/arduinobot/assets/8144277/068fedbb-9c17-4748-a868-608898730ae4
+
+
 ## Next Steps
 Move to a pyshical setup and print out the components of the robot and use an Arduino board and servo motors for control.
 ``
